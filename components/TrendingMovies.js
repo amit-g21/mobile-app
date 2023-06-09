@@ -10,8 +10,8 @@ export default function TrendingMovies({data}) {
   const navigation = useNavigation();
 
 
-  const handleClick = () => {
-    navigation.navigate('movie' , item)
+  const handleClick = (item) => {
+    navigation.navigate('Movie' , item)
   }
 
 
@@ -20,7 +20,7 @@ export default function TrendingMovies({data}) {
       <Text className='text-white text-xl mx-4 mb-5'>Trending</Text>
       <Carousel
         data={data}
-        renderItem={({item}) => <MovieCard item={item} handleClick={handleClick}/>}
+        renderItem={({item})=> <MovieCard handleClick={handleClick} item={item} />}
         firstItem={1}
         inactiveSlideOpacity={0.6}
         sliderWidth={width}
@@ -34,7 +34,7 @@ export default function TrendingMovies({data}) {
 
 const MovieCard = ({item , handleClick}) => {
   return (
-    <TouchableWithoutFeedback onPress={handleClick} >
+    <TouchableWithoutFeedback onPress={()=> handleClick(item)}>
       <Image
           source={require('../assets/images/moviePoster1.png')}
           style={{
