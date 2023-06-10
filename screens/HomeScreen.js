@@ -32,21 +32,21 @@ export default function HomeScreen() {
                 </View>
             </SafeAreaView>
             <ScrollView
-                indicatorStyle={{backgroundColor: 'white'}}
-                showsVerticalScrollIndicator={ true}
+                indicatorStyle={{ backgroundColor: 'white' }}
+                showsVerticalScrollIndicator={true}
                 contentContainerStyle={{ paddingBottom: 10 }}
             >
 
-            {/* trending movie carousel*/}
-            <TrendingMovies data={trending} />
+                {/* trending movie carousel*/}
+                <TrendingMovies data={trending} />
 
-            {/* upcoming movie row*/}
-            <MovieList title='Upcoming' data={upcoming} />
+                {/* upcoming movie row*/}
+                <MovieList title='Upcoming' data={upcoming} />
 
-            {/* top rated movie row*/}
-            <MovieList title='Top Rated' data={topRated} />
+                {/* top rated movie row*/}
+                <MovieList title='Top Rated' data={topRated} />
 
-        </ScrollView>
-        </View >
+            </ScrollView>
+        </View>
     )
 }

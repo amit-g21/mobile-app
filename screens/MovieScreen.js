@@ -6,6 +6,8 @@ import { styles, theme } from '../theme';
 import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { HeartIcon } from 'react-native-heroicons/solid';
 import { LinearGradient } from 'expo-linear-gradient';
+import Cast from '../components/Cast';
+import MovieList from '../components/MovieList';
 
 
 var { width, height } = Dimensions.get('window')
@@ -18,6 +20,9 @@ export default function MovieScreen() {
     const navigation = useNavigation()
 
     const [isFavorite, toggleFavorite] = useState(false);
+    const [cast, setCast] = useState([1, 2, 3, 4, 5]);
+    const [similarMovies, setSimilarMovies] = useState([1, 2, 3, 4, 5]);
+
 
     const movieName = 'The Passenger'
 
@@ -70,7 +75,31 @@ export default function MovieScreen() {
                     Release &#8226; 2018 &#8226; 156 min
                 </Text>
 
+                {/*genres*/}
+                <View className='flex-row justify-center mx-4 space-x-2'>
+                    <Text className='text-neutral-400 font-semibold text-base text-center'>
+                        Action &#8226;
+                    </Text>
+                    <Text className='text-neutral-400 font-semibold text-base text-center'>
+                        Thrill &#8226;
+                    </Text>
+                    <Text className='text-neutral-400 font-semibold text-base text-center'>
+                        Comedy 
+                    </Text>
+                </View>
+
+                {/*description*/}
+                <Text className='text-neutral-400 mx-4 -tracking-wide text-center'>
+                    In the provocative new drama from the director of The Visitor, sexual and moral boundaries are put to the test when a handsome stranger begins to infiltrate the lives of two artists. While searching for a condo in Berlin for his father, Nick meets Philipp, a young talented photographer and a gorgeous actress named Lilli. There is instant chemistry and both are easily seduced by Nick's charms. Lilli and Philipp begin to explore their relationship with the sexy visitor, succumbing to their passionate affections for him which intensifies their volatile emotional and physical bonds. But what Philipp and Lilli don't realize is that they are being lured into Nick's manipulative... and deadly, love game.
+                </Text>
             </View>
+
+            {/*movie cast*/}
+            <Cast cast={cast} navigation={navigation} />
+
+            {/*similar movies*/}
+            <MovieList title='similar movies' hideSeeAll={true} data={similarMovies} />
+
         </ScrollView>
     )
 }
