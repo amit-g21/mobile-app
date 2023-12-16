@@ -1,6 +1,7 @@
 # Movie-App-React-Native
 
 ![Image](https://ibb.co/y4dLcfW)
+<img src='https://ibb.co/y4dLcfW' />
 
   
   <p align="left">
